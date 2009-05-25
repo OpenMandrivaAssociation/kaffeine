@@ -1,11 +1,13 @@
+%define prever pre1
+
 Name:          kaffeine
 Version:       1.0
-Release:       %mkrel 0.1
+Release:       %mkrel -c %prever 1
 Summary:       Media Player for KDE4
 Group:         Graphical desktop/KDE
 License:       GPLv2+
 Url:           http://kaffeine.kde.org/
-Source:        %{name}-%{version}-pre1.tar.gz
+Source:        %{name}-%{version}-%{prever}.tar.gz
 BuildRequires: kdelibs4-devel
 BuildRequires: phonon-devel
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root
@@ -30,17 +32,15 @@ Kaffeine is a KDE4 Multi Engine Media Player.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %{oname}-%{version}-pre1
+%setup -q -n %{name}-%{version}-%{prever}
 
 %build
 %cmake_kde4
-
 %make 
 
 %install
-cd build
 rm -rf %{buildroot}
-%makeinstall_std
+%makeinstall_std -C build
 
 %clean
 rm -rf %{buildroot}
