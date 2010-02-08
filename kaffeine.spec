@@ -1,4 +1,4 @@
-%define prever pre2
+%define prever pre3
 
 Name:          kaffeine
 Version:       1.0
