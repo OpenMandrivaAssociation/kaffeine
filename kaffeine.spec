@@ -10,6 +10,8 @@ Url:           http://kaffeine.kde.org/
 Source:        http://sourceforge.net/projects/kaffeine/files/kaffeine/%{name}-%{version}-%{prever}/%{name}-%{version}-%{prever}.tar.gz
 BuildRequires: kdelibs4-devel
 BuildRequires: phonon-devel
+BuildRequires: libxine-devel
+BuildRequires: libdvb-devel
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root
 Provides: kaffeine4 = %version
 Obsoletes: kaffeine4 < 1.0
