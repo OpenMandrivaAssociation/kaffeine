@@ -23,6 +23,7 @@ Kaffeine is a KDE4 Multi Engine Media Player.
 %files 
 %defattr(-,root,root)
 %_kde_bindir/kaffeine
+%_kde_bindir/kaffeine-xbu
 %_kde_libdir/kde4/kaffeinedvb.so
 %_kde_appsdir/kaffeine
 %_kde_appsdir/solid/actions/*
