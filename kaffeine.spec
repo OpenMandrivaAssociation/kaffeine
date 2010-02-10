@@ -2,7 +2,7 @@
 
 Name:          kaffeine
 Version:       1.0
-Release:       %mkrel -c %prever 1
+Release:       %mkrel -c %prever 2
 Summary:       Media Player for KDE4
 Group:         Graphical desktop/KDE
 License:       GPLv2+
@@ -12,6 +12,8 @@ BuildRequires: kdelibs4-devel
 BuildRequires: phonon-devel
 BuildRequires: libxine-devel
 BuildRequires: libdvb-devel
+Requires:      xine-plugins
+Requires:      qt4-database-plugin-sqlite
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root
 Provides: kaffeine4 = %version
 Obsoletes: kaffeine4 < 1.0
