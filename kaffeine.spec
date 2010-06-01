@@ -1,17 +1,14 @@
-%define prever pre3
-
 Name:          kaffeine
 Version:       1.0
-Release:       %mkrel -c %prever 3
+Release:       %mkrel 1
 Summary:       Media Player for KDE4
 Group:         Graphical desktop/KDE
 License:       GPLv2+
 Url:           http://kaffeine.kde.org/
-Source:        http://sourceforge.net/projects/kaffeine/files/kaffeine/%{name}-%{version}-%{prever}/%{name}-%{version}-%{prever}.tar.gz
+Source:        http://sourceforge.net/projects/kaffeine/files/kaffeine/%{name}-%{version}/%{name}-%{version}.tar.gz
 BuildRequires: kdelibs4-devel
 BuildRequires: phonon-devel
 BuildRequires: libxine-devel
-BuildRequires: libdvb-devel
 Requires:      xine-plugins
 Requires:      qt4-database-plugin-sqlite
 Requires:      kdebase4-runtime
@@ -25,21 +22,20 @@ Obsoletes: %{_lib}kaffeine0
 %description
 Kaffeine is a KDE4 Multi Engine Media Player.
 
-%files 
+%files -f %name.lang
 %defattr(-,root,root)
 %_kde_bindir/kaffeine
 %_kde_bindir/kaffeine-xbu
-%_kde_libdir/kde4/kaffeinedvb.so
 %_kde_appsdir/kaffeine
+%_kde_appsdir/profiles/kaffeine.profile.xml
 %_kde_appsdir/solid/actions/*
-%_kde_datadir/locale/*
 %_kde_iconsdir/*/*/*/*
 %_kde_datadir/applications/kde4/kaffeine.desktop
 
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version}-%{prever}
+%setup -q -n %{name}-%{version}
 
 %build
 %cmake_kde4
@@ -48,6 +44,8 @@ Kaffeine is a KDE4 Multi Engine Media Player.
 %install
 rm -rf %{buildroot}
 %makeinstall_std -C build
+
+%find_lang %name
 
 %clean
 rm -rf %{buildroot}
