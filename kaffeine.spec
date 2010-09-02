@@ -1,11 +1,11 @@
 Name:          kaffeine
-Version:       1.0
+Version:       1.1
 Release:       %mkrel 1
 Summary:       Media Player for KDE4
 Group:         Graphical desktop/KDE
 License:       GPLv2+
 Url:           http://kaffeine.kde.org/
-Source:        http://sourceforge.net/projects/kaffeine/files/kaffeine/%{name}-%{version}/%{name}-%{version}.tar.gz
+Source:        http://downloads.sourceforge.net/kaffeine/kaffeine-%{version}.tar.gz
 BuildRequires: kdelibs4-devel
 BuildRequires: phonon-devel
 BuildRequires: libxine-devel
