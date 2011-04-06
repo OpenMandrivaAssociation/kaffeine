@@ -1,5 +1,5 @@
 Name:          kaffeine
-Version:       1.1
+Version:       1.2.1
 Release:       %mkrel 1
 Summary:       Media Player for KDE4
 Group:         Graphical desktop/KDE
