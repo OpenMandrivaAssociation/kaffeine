@@ -1,6 +1,6 @@
 Name:          kaffeine
 Version:       1.2.2
-Release:       2
+Release:       3
 Summary:       Media Player for KDE4
 Group:         Graphical desktop/KDE
 License:       GPLv2+
