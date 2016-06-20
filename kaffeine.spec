@@ -1,25 +1,34 @@
 Name:          kaffeine
-Version:       1.3.1
+Version:       2.0.3
 Release:       1
 Summary:       Media Player for KDE4
 Group:         Graphical desktop/KDE
 License:       GPLv2+
 Url:           http://kaffeine.kde.org/
-Source0:       http://downloads.sourceforge.net/kaffeine/kaffeine-%{version}.tar.gz
-BuildRequires: kdelibs4-devel
-BuildRequires: phonon-devel
-BuildRequires: pkgconfig(x11)
+Source0:       http://downloads.sourceforge.net/kaffeine/kaffeine-%{version}.tar.xz
+BuildRequires: cmake(ECM)
+BuildRequires: cmake(KF5CoreAddons)
+BuildRequires: cmake(KF5I18n)
+BuildRequires: cmake(KF5WidgetsAddons)
+BuildRequires: cmake(KF5XmlGui)
+BuildRequires: cmake(KF5KIO)
+BuildRequires: cmake(KF5Solid)
+BuildRequires: cmake(KF5DBusAddons)
+BuildRequires: cmake(KF5DocTools)
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(Qt5Network)
+BuildRequires: pkgconfig(Qt5Sql)
+BuildRequires: pkgconfig(Qt5X11Extras)
 BuildRequires: pkgconfig(libvlc)
-Requires:      qt4-database-plugin-sqlite
-Requires:      kdebase4-runtime
-Provides: kaffeine4 = %version
-Obsoletes: kaffeine4 < 1.0
+BuildRequires: pkgconfig(libdvb)
+Obsoletes: kaffeine4 < 2.0.3
 Obsoletes: kaffeine-engine-xine
 Obsoletes: kaffeine-engine-gstreamer
 Obsoletes: %{_lib}kaffeine0
 
 %description
-Kaffeine is a KDE4 Multi Engine Media Player.
+Kaffeine is a Multi Engine Media Player.
 
 %files -f %name.lang
 %_kde_bindir/dtvdaemon
@@ -34,15 +43,14 @@ Kaffeine is a KDE4 Multi Engine Media Player.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 %apply_patches
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make 
+%ninja
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
-%find_lang %name
-
+%find_lang %{name}
