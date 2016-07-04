@@ -21,7 +21,8 @@ BuildRequires: pkgconfig(Qt5Network)
 BuildRequires: pkgconfig(Qt5Sql)
 BuildRequires: pkgconfig(Qt5X11Extras)
 BuildRequires: pkgconfig(libvlc)
-BuildRequires: pkgconfig(libdvb)
+BuildRequires: pkgconfig(libdvbv5)
+BuildRequires: pkgconfig(xscrnsaver)
 Obsoletes: kaffeine4 < 2.0.3
 Obsoletes: kaffeine-engine-xine
 Obsoletes: kaffeine-engine-gstreamer
