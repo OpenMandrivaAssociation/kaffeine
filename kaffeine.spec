@@ -1,5 +1,5 @@
 Name:          kaffeine
-Version:       2.0.3
+Version:       2.0.4
 Release:       1
 Summary:       Media Player for KDE4
 Group:         Graphical desktop/KDE
