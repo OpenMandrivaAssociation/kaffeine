@@ -1,7 +1,7 @@
 Name:          kaffeine
 Version:       2.0.4
 Release:       1
-Summary:       Media Player for KDE4
+Summary:       Media Player for Plasma 5
 Group:         Graphical desktop/KDE
 License:       GPLv2+
 Url:           http://kaffeine.kde.org/
@@ -32,26 +32,30 @@ Obsoletes: %{_lib}kaffeine0
 Kaffeine is a Multi Engine Media Player.
 
 %files -f %name.lang
-%_kde_bindir/dtvdaemon
-%_kde_bindir/kaffeine
-%_kde_appsdir/kaffeine
-%_kde_appsdir/profiles/kaffeine.profile.xml
-%_kde_appsdir/solid/actions/*
-%_kde_iconsdir/*/*/*/*
-%_kde_datadir/applications/kde4/kaffeine.desktop
-%_kde_datadir/appdata/kaffeine.appdata.xml
+%{_kde5_bindir}/kaffeine
+%{_kde5_bindir}/dtvdaemon
+%{_kde5_datadir}/%{name}/
+%{_kde5_datadir}/profiles/%{name}.profile.xml
+%{_kde5_datadir}/solid/actions/*.desktop
+%{_kde5_iconsdir}/*/*/*/*
+%{_kde5_applicationsdir}/org.kde.%{name}.desktop
+%{_datadir}/appdata/org.kde.%{name}.appdata.xml
+%{_mandir}/man1/%{name}.1.*
 
 #--------------------------------------------------------------------
 
 %prep
 %setup -q
 %apply_patches
+
+export CC=gcc
+export CXX=g++
 %cmake_kde5
 
 %build
-%ninja
+%ninja -C build
 
 %install
 %ninja_install -C build
 
-%find_lang %{name}
+%find_lang %{name} --with-html --with-man
