@@ -1,5 +1,5 @@
 Name:          kaffeine
-Version:       2.0.12.1
+Version:       2.0.14
 Release:       1
 Summary:       Media Player for Plasma 5
 Group:         Graphical desktop/KDE
@@ -33,13 +33,12 @@ Kaffeine is a Multi Engine Media Player.
 
 %files -f %name.lang
 %{_kde5_bindir}/kaffeine
-%{_kde5_bindir}/dtvdaemon
 %{_kde5_datadir}/%{name}/
 %{_kde5_datadir}/profiles/%{name}.profile.xml
 %{_kde5_datadir}/solid/actions/*.desktop
 %{_kde5_iconsdir}/*/*/*/*
 %{_kde5_applicationsdir}/org.kde.%{name}.desktop
-%{_datadir}/appdata/org.kde.%{name}.appdata.xml
+%{_datadir}/metainfo/org.kde.%{name}.appdata.xml
 %{_mandir}/man1/%{name}.1.*
 
 #--------------------------------------------------------------------
@@ -48,8 +47,8 @@ Kaffeine is a Multi Engine Media Player.
 %setup -q
 %apply_patches
 
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %cmake_kde5
 
 %build
