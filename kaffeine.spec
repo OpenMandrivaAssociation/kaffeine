@@ -1,5 +1,5 @@
 Name:          kaffeine
-Version:       2.0.16
+Version:       2.0.18
 Release:       1
 Summary:       Media Player for Plasma 5
 Group:         Graphical desktop/KDE
