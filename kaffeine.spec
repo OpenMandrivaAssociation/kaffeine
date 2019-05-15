@@ -6,7 +6,7 @@ Group:         Graphical desktop/KDE
 License:       GPLv2+
 Url:           http://kaffeine.kde.org/
 #Source0:       https://github.com/KDE/kaffeine/archive/v%{version}-.tar.gz
-Source0:       http://download.kde.org/stable/kaffeine/%{name}-%{version}-2.tar.xz
+Source0:       http://download.kde.org/stable/kaffeine/%{name}-%{version}.tar.xz
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5I18n)
