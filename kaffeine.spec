@@ -47,7 +47,7 @@ Kaffeine is a Multi Engine Media Player.
 
 %prep
 %setup -q -n %{name}-%{version}
-%apply_patches
+%autopatch -p1
 
 #export CC=gcc
 #export CXX=g++
