@@ -4,7 +4,7 @@ Release:       1
 Summary:       Media Player for Plasma 5
 Group:         Graphical desktop/KDE
 License:       GPLv2+
-Url:           http://kaffeine.kde.org/
+Url:           https://kaffeine.kde.org/
 #Source0:       https://github.com/KDE/kaffeine/archive/v%{version}-.tar.gz
 Source0:       http://download.kde.org/stable/kaffeine/%{name}-%{version}.tar.xz
 BuildRequires: cmake(ECM)
