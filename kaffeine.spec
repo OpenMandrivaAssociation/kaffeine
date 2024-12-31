@@ -1,12 +1,12 @@
 Name:          kaffeine
-Version:       2.0.18
+Version:       2.0.19
 Release:       1
 Summary:       Media Player for Plasma 5
 Group:         Graphical desktop/KDE
 License:       GPLv2+
 Url:           https://kaffeine.kde.org/
-#Source0:       https://github.com/KDE/kaffeine/archive/v%{version}-.tar.gz
-Source0:       http://download.kde.org/stable/kaffeine/%{name}-%{version}.tar.xz
+Source0:       https://invent.kde.org/multimedia/kaffeine/-/archive/v%{version}/kaffeine-v%{version}.tar.bz2
+#Source0:       http://download.kde.org/stable/kaffeine/%{name}-%{version}.tar.xz
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5I18n)
@@ -46,8 +46,7 @@ Kaffeine is a Multi Engine Media Player.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version}
-%autopatch -p1
+%autosetup -n %{name}-v%{version}
 
 #export CC=gcc
 #export CXX=g++
