@@ -36,7 +36,7 @@ Kaffeine is a Multi Engine Media Player.
 %files -f %name.lang
 %{_kde5_bindir}/kaffeine
 %{_kde5_datadir}/%{name}/
-%{_kde5_datadir}/profiles/%{name}.profile.xml
+#{_kde5_datadir}/profiles/%{name}.profile.xml
 %{_kde5_datadir}/solid/actions/*.desktop
 %{_kde5_iconsdir}/*/*/*/*
 %{_kde5_applicationsdir}/org.kde.%{name}.desktop
